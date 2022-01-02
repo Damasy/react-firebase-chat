@@ -49,7 +49,6 @@ function SignIn() {
   const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     provider.setCustomParameters({ prompt: 'select_account' });
-    console.log(provider, 'provider')
     signInWithPopup(auth, provider);
   }
   return (
@@ -109,7 +108,6 @@ function ChatRoom() {
 
 function ChatMessage({ message }) {
   const { text, uid, photoURL } = message;
-  console.log(message, 'message', message.uid, message.id)
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
   return(
     <div className={`message ${messageClass}`}>
